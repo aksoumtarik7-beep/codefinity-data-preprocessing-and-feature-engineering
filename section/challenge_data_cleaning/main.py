@@ -5,13 +5,13 @@ import pandas as pd
 data = sns.load_dataset("titanic")
 
 # 2. Fill missing numeric values in 'age' with the mean
-data["age"].fillna(___, inplace=True)
+data["age"].fillna(data["age"].mean(), inplace=True)
 
 # 3. Fill missing categorical values in 'embarked' with the mode
-data["embarked"].fillna(___, inplace=True)
+data["embarked"].fillna(data["embarked"].mode()[0], inplace=True)
 
 # 4. Remove duplicates
-___
+data.drop_duplicates(inplace=True)
 
 # 5. Remove outliers in 'fare' using IQR
 Q1 = data["fare"].quantile(0.25)
